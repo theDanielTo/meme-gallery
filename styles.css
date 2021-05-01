@@ -27,6 +27,7 @@ input {
 button {
   padding: 8px 12px;
   background-color: #1bb76e;
+  cursor: pointer;
 }
 
 button:hover {
@@ -54,7 +55,7 @@ button {
 }
 
 main {
-  max-width: 1100px;
+  max-width: 960px;
   margin: 32px auto;
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +64,7 @@ main {
 .gallery-image {
   width: 310px;
   height: 310px;
-  margin: 5px;
+  margin: 10px;
   border: 6px solid #48494b;
   border-radius: 5x;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
@@ -73,6 +74,8 @@ main {
 .delete-button {
   width: 31px;
   height: 31px;
+  margin-left: -55px;
+  margin-top: 20px;
   background-color: red;
   border-radius: 50%;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
