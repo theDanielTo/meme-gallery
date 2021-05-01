@@ -23,14 +23,33 @@ $imageUrlInput.addEventListener('keyup', (event) => {
   }
 })
 
-function updateGallery(){
+function updateGallery() {
   $gallery.innerHTML = ""
-  for (let i = 0; i < imageUrls.length; i++){
+  for (let i = 0; i < imageUrls.length; i++) {
+    let anchorElement = document.createElement('a')
+    anchorElement.href = imageUrls[i]
+    anchorElement.target = '_blank'
+
     let imageElement = document.createElement('img')
-    imageElement.classList.add('gallery-image')
     imageElement.src = imageUrls[i]
-    $gallery.appendChild(imageElement)
+    imageElement.className = 'gallery-image'
+
+    let deleteButton = document.createElement('button')
+    deleteButton.className = 'delete-button'
+    deleteButton.id = 'delete-' + i
+    deleteButton.innerText = 'X'
+    deleteButton.addEventListener('click', deleteImage)
+
+    anchorElement.appendChild(imageElement)
+    $gallery.appendChild(anchorElement)
+    $gallery.appendChild(deleteButton)
   }
+}
+
+function deleteImage(event){
+  let indexOfDelete = event.currentTarget.id.split('-')[1]
+  imageUrls.splice(indexOfDelete, 1)
+  updateGallery()
 }
 
 updateGallery()
