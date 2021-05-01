@@ -43,6 +43,7 @@ function updateGallery() {
     anchorElement.appendChild(imageElement)
     $gallery.appendChild(anchorElement)
     $gallery.appendChild(deleteButton)
+
   }
 }
 
