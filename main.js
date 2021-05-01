@@ -32,11 +32,25 @@ function updateGallery() {
 
     let imageElement = document.createElement('img')
     imageElement.src = imageUrls[i]
-    imageElement.classList.add('gallery-image')
+    imageElement.className = 'gallery-image'
+
+    let deleteButton = document.createElement('button')
+    deleteButton.className = 'delete-button'
+    deleteButton.id = 'delete-' + i
+    deleteButton.innerText = 'X'
+    deleteButton.addEventListener('click', deleteImage)
 
     anchorElement.appendChild(imageElement)
     $gallery.appendChild(anchorElement)
+    $gallery.appendChild(deleteButton)
+
   }
+}
+
+function deleteImage(event){
+  let indexOfDelete = event.currentTarget.id.split('-')[1]
+  imageUrls.splice(indexOfDelete, 1)
+  updateGallery()
 }
 
 updateGallery()

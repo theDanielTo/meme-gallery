@@ -31,6 +31,7 @@ button {
 
 button:hover {
   background-color: #5ebd91;
+  opacity: 40%;
 }
 
 input,
@@ -53,7 +54,7 @@ button {
 }
 
 main {
-  max-width: 960px;
+  max-width: 1280px;
   margin: 32px auto;
   display: flex;
   flex-wrap: wrap;
@@ -67,4 +68,19 @@ main {
   border-radius: 5x;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
   object-fit: cover;
+}
+
+.delete-button {
+  width: 31px;
+  height: 31px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.delete-button:hover {
+  background-color: red;
+  opacity: 40%;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
 }
