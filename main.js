@@ -23,13 +23,19 @@ $imageUrlInput.addEventListener('keyup', (event) => {
   }
 })
 
-function updateGallery(){
+function updateGallery() {
   $gallery.innerHTML = ""
-  for (let i = 0; i < imageUrls.length; i++){
+  for (let i = 0; i < imageUrls.length; i++) {
+    let anchorElement = document.createElement('a')
+    anchorElement.href = imageUrls[i]
+    anchorElement.target = '_blank'
+
     let imageElement = document.createElement('img')
-    imageElement.classList.add('gallery-image')
     imageElement.src = imageUrls[i]
-    $gallery.appendChild(imageElement)
+    imageElement.classList.add('gallery-image')
+
+    anchorElement.appendChild(imageElement)
+    $gallery.appendChild(anchorElement)
   }
 }
 
